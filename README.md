@@ -1,3 +1,3 @@
 # devops-capstone-project
 
-## My Udacity devops nanodegree capstone 
+## My Udacity devops nanodegree capstone project

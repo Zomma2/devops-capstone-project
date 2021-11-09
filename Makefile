@@ -3,6 +3,9 @@ setup:
 	echo "Setup Started..."
 	python3 -m venv ~/.capstoneProj
 	source ~/.capstoneProj/bin/activate 
+setup_no_source:
+	echo "Setup Started..."
+	python3 -m venv ~/.capstoneProj
 
 python_install:	
 	echo "Installation Started..."

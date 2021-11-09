@@ -39,11 +39,37 @@ upload_docker :
 	./upload_docker.sh
 
 install_kub_and_mini :
-	chmod +x upload_docker.sh
-	./upload_docker.sh
+	chmod +x install_minikube.sh
+	./install_minikube.sh
+	chmod +x install_kubernetes.sh
+	./install_kubernetes.sh
+
+install_eks : 	
+	chmod +x install_eksctl.sh
+	./install_eksctl.sh
+
+kub_deploy :
+	chmod +x kubernetes_deploy
+	minikube start 
+	./kubernetes_deploy
+	
+kub_deploy_force_1_cpu :
+	chmod +x kubernetes_deploy
+	minikube start --extra-config=kubeadm.ignore-preflight-errors=NumCPU --force --cpus 1
+	./kubernetes_deploy
 	
 eks_cluster_init : 
 	chmod +x cluster_eks_init.sh
 	./cluster_eks_init.sh
 	
+deploy_cluster : 
+	chmod +x deploy_cluster.sh
+	./deploy_cluster.sh
+
+rolling_update : 
+	chmod +x rolling_updating.sh
+	./rolling_updating.sh
 	
+update_rollout :
+	chmod +x update_rollout.sh
+	./update_rollout.sh

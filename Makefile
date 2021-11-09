@@ -3,6 +3,7 @@ setup:
 	echo "Setup Started..."
 	python3 -m venv ~/.capstoneProj
 	source ~/.capstoneProj/bin/activate 
+
 python_install:	
 	echo "Installation Started..."
 	pip install --upgrade pip
@@ -34,6 +35,10 @@ upload_docker :
 	chmod +x upload_docker.sh
 	./upload_docker.sh
 
+install_kub_and_mini :
+	chmod +x upload_docker.sh
+	./upload_docker.sh
+	
 eks_cluster_init : 
 	chmod +x cluster_eks_init.sh
 	./cluster_eks_init.sh

@@ -12,8 +12,9 @@ jobs:
       - run:
           name: Create environment 
           command: |
+            #!/bin/bash
             make setup
-            ../ ~/.capstoneProj/bin/activate 
+            source ~/.capstoneProj/bin/activate 
       - run : 
           name: Install dependencies
           command: |

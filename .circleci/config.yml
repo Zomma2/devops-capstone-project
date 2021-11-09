@@ -33,8 +33,6 @@ workflows:
           matrix:
             parameters:
               image: [$DOCKER_LOGIN/helloapp]
-              path: [helloapp]
-              docker-context: [helloapp]
               deploy: [true]
               update-description: [true]    
           requires: [build]

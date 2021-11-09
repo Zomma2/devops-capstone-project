@@ -36,6 +36,5 @@ workflows:
               path: [helloapp]
               docker-context: [helloapp]
               deploy: [true]
-              tag: ['$(<helloapp/2)', 'latest']
               update-description: [true]    
           requires: [build]

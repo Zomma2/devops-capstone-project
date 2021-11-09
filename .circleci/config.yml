@@ -33,7 +33,7 @@ workflows:
           matrix:
             parameters:
               image: [$DOCKER_LOGIN/helloapp]
-              path: [app.py]
+              path: [helloapp]
               docker-context: [helloapp]
               deploy: [true]
               update-description: [true]    

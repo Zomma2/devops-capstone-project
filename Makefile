@@ -49,14 +49,14 @@ install_eks :
 	./install_eksctl.sh
 
 kub_deploy :
-	chmod +x kubernetes_deploy
+	chmod +x kubernetes_deploy.sh
 	minikube start 
-	./kubernetes_deploy
+	./kubernetes_deploy.sh
 	
 kub_deploy_force_1_cpu :
-	chmod +x kubernetes_deploy
+	chmod +x kubernetes_deploy.sh
 	minikube start --extra-config=kubeadm.ignore-preflight-errors=NumCPU --force --cpus 1
-	./kubernetes_deploy
+	./kubernetes_deploy.sh
 	
 eks_cluster_init : 
 	chmod +x cluster_eks_init.sh

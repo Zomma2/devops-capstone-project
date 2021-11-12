@@ -35,10 +35,12 @@ jobs:
       - run:
           name: Installing kube and dependencies
           command: |
+            make setup_no_source
             source ~/.capstoneProj/bin/activate 
       - run:
           name: Update EKS lint
           command: |
+            make setup_no_source
             source ~/.capstoneProj/bin/activate 
             make rolling_update 
 

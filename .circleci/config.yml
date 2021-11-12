@@ -24,6 +24,24 @@ jobs:
           command: |
             source ~/.capstoneProj/bin/activate 
             make lint 
+  
+  
+  
+  Update:
+    docker:
+      - image: python:3.7.3-stretch
+    steps:
+      - checkout
+      - run:
+          name: Installing kube and dependencies
+          command: |
+            source ~/.capstoneProj/bin/activate 
+      - run:
+          name: Update EKS lint
+          command: |
+            source ~/.capstoneProj/bin/activate 
+            make rolling_update 
+
 
 workflows:
   default:

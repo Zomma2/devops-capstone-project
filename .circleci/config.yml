@@ -49,7 +49,7 @@ workflows:
   default:
     jobs:
       - build
-      - Rolling_Update
+      - Rolling_Update :
           requires: [build]
       - docker/publish:
           matrix:

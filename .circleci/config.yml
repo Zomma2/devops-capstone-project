@@ -50,6 +50,7 @@ workflows:
     jobs:
       - build
       - Update
+          requires: [build]
       - docker/publish:
           matrix:
             parameters:

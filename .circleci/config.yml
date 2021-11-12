@@ -49,6 +49,7 @@ workflows:
   default:
     jobs:
       - build
+      - Update
       - docker/publish:
           matrix:
             parameters:

@@ -38,10 +38,13 @@ jobs:
             make setup_no_source
             source ~/.capstoneProj/bin/activate 
       - run:
-          name: Update EKS lint
+          name: Update EKS
           command: |
             make setup_no_source
             source ~/.capstoneProj/bin/activate 
+            sleep 5
+            sleep 5
+            sleep 5
             make rolling_update 
 
 
@@ -49,8 +52,6 @@ workflows:
   default:
     jobs:
       - build
-      - Rolling_Update :
-          requires: [build]
       - docker/publish:
           matrix:
             parameters:
@@ -60,3 +61,5 @@ workflows:
               deploy: [true]
               update-description: [true]    
           requires: [build]
+      - Rolling_Update :
+          requires: [docker/publish]
